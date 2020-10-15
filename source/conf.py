@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Documentation magasins'
-copyright = '2020, Stéphame Kanshine, Arnaud Roux, Raphael Benitez'
-author = 'Stéphame Kanshine, Arnaud Roux, Raphael Benitez'
+project = 'lsr-documentation-magasin'
+copyright = '2020, Stéphane K, Arnaud R., Raphael B.'
+author = 'Stéphane K, Arnaud R., Raphael B.'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -31,7 +31,13 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.todo',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.autodoc',
+    'rst2pdf.pdfbuilder',
 ]
+
+pdf_documents = [('index', 'rst2pdf', 'Documentation Magasin', 'La solution running'),]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -54,9 +60,17 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_theme_options = {
+    'prev_next_buttons_location': 'bottom',
+    'collapse_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': False,
+    'display_version': False,
+}
